@@ -37,3 +37,8 @@ def test_contains_special():
 
 def test_contains_special_without_special():
     assert contains_special("Password1") == False
+
+def test_short_password():
+    assert is_strong_password("Pass1") == False
+if len(password) < 8:
+    return False
