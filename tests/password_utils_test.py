@@ -26,3 +26,14 @@ def test_mask_password():
 
     assert mask_password(password)=="P*******1"
 
+def test_mask_password():
+    password = "Password1"
+    assert mask_password(password) == "P*******1"
+
+
+def test_contains_special():
+    assert contains_special("Password1!") == True
+
+
+def test_contains_special_without_special():
+    assert contains_special("Password1") == False
