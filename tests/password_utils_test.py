@@ -8,23 +8,14 @@ from src.password_utils import (
 
 
 def test_password_valid():
-
-    password="Password1"
-
-    assert is_strong_password(password)==True
+    password = "Password1"
+    assert is_strong_password(password) == True
 
 
 def test_password_type():
-
     with pytest.raises(TypeError):
         is_strong_password(1234)
 
-
-def test_mask_password():
-
-    password="Password1"
-
-    assert mask_password(password)=="P*******1"
 
 def test_mask_password():
     password = "Password1"
@@ -38,7 +29,6 @@ def test_contains_special():
 def test_contains_special_without_special():
     assert contains_special("Password1") == False
 
+
 def test_short_password():
     assert is_strong_password("Pass1") == False
-if len(password) < 8:
-    return False
